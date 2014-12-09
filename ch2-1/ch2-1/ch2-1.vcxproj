@@ -78,6 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DogDoor.cpp" />
+    <ClCompile Include="DogDoorSimulator.cpp" />
+    <ClCompile Include="Remote.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DogDoor.h" />
+    <ClInclude Include="DogDoorSimulator.h" />
+    <ClInclude Include="Remote.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -80,11 +80,15 @@
   <ItemGroup>
     <ClInclude Include="Guitar.h" />
     <ClInclude Include="GuitarSpec.h" />
+    <ClInclude Include="Instrument.h" />
+    <ClInclude Include="InstrumentSpec.h" />
     <ClInclude Include="Inventory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Guitar.cpp" />
     <ClCompile Include="GuitarSpec.cpp" />
+    <ClCompile Include="Instrument.cpp" />
+    <ClCompile Include="InstrumentSpec.cpp" />
     <ClCompile Include="Inventory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

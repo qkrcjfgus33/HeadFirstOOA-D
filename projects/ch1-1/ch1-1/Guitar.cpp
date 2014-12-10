@@ -2,7 +2,7 @@
 
 
 Guitar::Guitar(std::string serialNumber, double price, GuitarSpec spec) 
-    : Instrument()
+    : Instrument(serialNumber, price, spec)
 {
 }
 

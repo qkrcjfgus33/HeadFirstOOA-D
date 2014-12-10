@@ -1,28 +1,21 @@
 #pragma once
 #include<iostream>
+#include"InstrumentSpec.h"
+using std::string;
 
-class GuitarSpec
+class GuitarSpec : InstrumentSpec
 {
 
 public:
-    GuitarSpec(BUILDER builder, std::string model, TYPE type, WOOD backWood, WOOD topWood);
+    GuitarSpec(BUILDER builder, string model, TYPE type, WOOD backWood, WOOD topWood, int numStrings);
     virtual ~GuitarSpec();
 
 public:
-    std::string getModel();
-    BUILDER getBuilder();
     int getNumStrings();
-    TYPE getType();
-    WOOD getBackWood();
-    WOOD getTopWood();
 
-    bool matches(GuitarSpec spec);
+    virtual bool matches(GuitarSpec spec);
 
-private:
-    std::string model;
-    BUILDER builder;
+protected:
     int numStrings;
-    WOOD backWood, topWood;
-    TYPE type;
 };
 

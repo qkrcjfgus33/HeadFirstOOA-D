@@ -1,10 +1,9 @@
 #pragma once
+#include<iostream>
+using std::string;
+
 class InstrumentSpec
 {
-public:
-    InstrumentSpec();
-    virtual ~InstrumentSpec();
-
 public:
     enum class BUILDER{
         UUKNOWN,
@@ -34,5 +33,24 @@ public:
         ALDER,
         SITKA
     };
+
+public:
+    InstrumentSpec(BUILDER builder, string model, TYPE type, WOOD backWood, WOOD topWood);
+    virtual ~InstrumentSpec();
+
+public:
+    string getModel();
+    BUILDER getBuilder();
+    TYPE getType();
+    WOOD getBackWood();
+    WOOD getTopWood();
+
+    virtual bool matches(InstrumentSpec spec);
+
+protected:
+    string model;
+    BUILDER builder;
+    WOOD backWood, topWood;
+    TYPE type;
 };
 

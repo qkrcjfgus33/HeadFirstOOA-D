@@ -1,7 +1,8 @@
 #include "Instrument.h"
 
 
-Instrument::Instrument(std::string serialNumber, double price, GuitarSpec spec)
+Instrument::Instrument(std::string serialNumber, double price, InstrumentSpec spec)
+    : serialNumber(serialNumber), price(price), spec(spec)
 {
 }
 
@@ -20,4 +21,8 @@ double Instrument::getPrice(){
 
 void Instrument::setPrice(float newPrice){
     price = newPrice;
+}
+
+InstrumentSpec Instrument::getSpec(){
+    return spec;
 }

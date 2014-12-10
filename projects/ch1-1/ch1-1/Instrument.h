@@ -1,19 +1,23 @@
 #pragma once
 #include<iostream>
+using std::string;
 
+template <typename Spec>
 class Instrument
 {
 public:
-    Instrument();
+    Instrument(string serialNumber, double price, Spec spec);
     virtual ~Instrument();
 
 public:
     void setPrice(float newPrice);
-    std::string getSerialNumber();
+    string getSerialNumber();
     double getPrice();
+    Spec getSpec();
 
 protected:
-    std::string serialNumber;
+    string serialNumber;
     double price;
+    Spec spec; //상속문제.
 };
 

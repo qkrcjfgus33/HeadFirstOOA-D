@@ -3,8 +3,11 @@
 #include"InstrumentSpec.h"
 using std::string;
 
-class GuitarSpec : InstrumentSpec
+class GuitarSpec 
+    : public InstrumentSpec
 {
+private:
+    int numStrings;
 
 public:
     GuitarSpec(BUILDER builder, string model, TYPE type, WOOD backWood, WOOD topWood, int numStrings);
@@ -13,9 +16,6 @@ public:
 public:
     int getNumStrings();
 
-    virtual bool matches(GuitarSpec spec);
-
-protected:
-    int numStrings;
+    virtual bool matches(InstrumentSpec spec);
 };
 

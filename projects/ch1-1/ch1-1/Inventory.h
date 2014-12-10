@@ -1,18 +1,25 @@
 #pragma once
 #include<list>
+#include"Instrument.h"
+#include"InstrumentSpec.h"
 #include"Guitar.h"
+#include"GuitarSpec.h"
+#include"Mandolin.h"
+#include"MandolinSpec.h"
 using namespace std;
 
 class Inventory
 {
 private:
-    list<Guitar*>* guitars;
+    list<Instrument*>* guitars;
 public:
     Inventory();
     virtual ~Inventory();
 
-    void addGuitar(string serialNumber, double price, GuitarSpec spec);
-    Guitar* getGuitar(string serialNumber);
+    void addInstrument(string serialNumber, double price, InstrumentSpec spec);
+    Instrument* get(string serialNumber);
+
     list<Guitar*>* search(GuitarSpec searchGuitar);
+    list<Mandolin*>* search(MandolinSpec searchMandolin);
 };
 

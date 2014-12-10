@@ -83,6 +83,8 @@
     <ClInclude Include="Instrument.h" />
     <ClInclude Include="InstrumentSpec.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Mandolin.h" />
+    <ClInclude Include="MandolinSpec.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Guitar.cpp" />
@@ -90,6 +92,8 @@
     <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="InstrumentSpec.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Mandolin.cpp" />
+    <ClCompile Include="MandolinSpec.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

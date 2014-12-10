@@ -34,6 +34,12 @@ public:
         SITKA
     };
 
+private:
+    string model;
+    BUILDER builder;
+    WOOD backWood, topWood;
+    TYPE type;
+
 public:
     InstrumentSpec(BUILDER builder, string model, TYPE type, WOOD backWood, WOOD topWood);
     virtual ~InstrumentSpec();
@@ -47,10 +53,5 @@ public:
 
     virtual bool matches(InstrumentSpec spec);
 
-protected:
-    string model;
-    BUILDER builder;
-    WOOD backWood, topWood;
-    TYPE type;
 };
 

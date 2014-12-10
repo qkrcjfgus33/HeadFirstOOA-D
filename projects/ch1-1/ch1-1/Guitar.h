@@ -2,10 +2,12 @@
 #include<iostream>
 #include"GuitarSpec.h"
 #include"Instrument.h"
+using std::string;
 
 
-class Guitar : public Instrument<GuitarSpec>{
+class Guitar 
+    : public Instrument{
 public:
-    Guitar(std::string serialNumber, double price, GuitarSpec spec);
+    Guitar(string serialNumber, double price, GuitarSpec spec);
     virtual ~Guitar();
 };

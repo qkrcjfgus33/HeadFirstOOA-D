@@ -30,6 +30,12 @@
     <ClInclude Include="InstrumentSpec.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Mandolin.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MandolinSpec.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Guitar.cpp">
@@ -45,6 +51,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="InstrumentSpec.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mandolin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MandolinSpec.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

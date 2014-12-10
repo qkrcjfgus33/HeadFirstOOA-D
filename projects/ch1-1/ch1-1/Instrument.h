@@ -1,23 +1,23 @@
 #pragma once
 #include<iostream>
+#include"InstrumentSpec.h"
 using std::string;
 
-template <typename Spec>
 class Instrument
 {
+private:
+    string serialNumber;
+    double price;
+    InstrumentSpec spec;
+
 public:
-    Instrument(string serialNumber, double price, Spec spec);
+    Instrument(string serialNumber, double price, InstrumentSpec spec);
     virtual ~Instrument();
 
 public:
     void setPrice(float newPrice);
     string getSerialNumber();
     double getPrice();
-    Spec getSpec();
-
-protected:
-    string serialNumber;
-    double price;
-    Spec spec; //상속문제.
+    InstrumentSpec getSpec();
 };
 

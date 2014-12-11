@@ -4,7 +4,7 @@ class MandolinSpec :
     public InstrumentSpec
 {
 public:
-    enum class Style{ A, B };
+    enum class Style{ UUKNOWN, A, B };
 
 private:
     Style style;
@@ -14,7 +14,7 @@ public:
     virtual ~MandolinSpec();
 
 public:
-    int getStyle();
+    Style getStyle();
 
     virtual bool matches(InstrumentSpec spec);
 };

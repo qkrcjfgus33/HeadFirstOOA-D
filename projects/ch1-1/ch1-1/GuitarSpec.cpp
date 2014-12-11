@@ -15,10 +15,17 @@ int GuitarSpec::getNumStrings(){
     return numStrings;
 }
 
-bool InstrumentSpec::matches(InstrumentSpec spec){
-    int numStrings = spec.getNumStrings();
+bool GuitarSpec::matches(InstrumentSpec otherSpec){
+    if (!InstrumentSpec::matches(otherSpec)){
+        return false;
+    }
+    if (typeid(otherSpec) != typeid(GuitarSpec)){
+        return false;
+    }
 
-    if (numStrings != INT_NULL && numStrings != spec.getNumStrings()){
+    GuitarSpec spec = (GuitarSpec)otherSpec;
+
+    if (numStrings != 0 && numStrings != spec.getNumStrings()){
         return false;
     }
 

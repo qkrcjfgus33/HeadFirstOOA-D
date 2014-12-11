@@ -11,7 +11,7 @@ using namespace std;
 class Inventory
 {
 private:
-    list<Instrument*>* guitars;
+    list<Instrument*>* inventory;
 public:
     Inventory();
     virtual ~Inventory();

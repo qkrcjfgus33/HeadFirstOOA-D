@@ -4,7 +4,7 @@ using namespace std;
 
 Inventory::Inventory()
 {
-    guitars = new list<Guitar*>();
+    inventory = new list<Instrument*>();
 }
 
 
@@ -12,18 +12,24 @@ Inventory::~Inventory()
 {
 }
 
-void Inventory::addGuitar(string serialNumber, double price, GuitarSpec spec){
-    Guitar* guitar = new Guitar(serialNumber, price, spec);
-    guitars->push_back(guitar);
+void Inventory::addInstrument(string serialNumber, double price, InstrumentSpec spec){
+    Instrument* instrument = nullptr;
+    if (typeid(spec) == typeid(GuitarSpec)){
+        instrument = new Guitar(serialNumber, price, (GuitarSpec)spec);
+    }
+    else if (typeid(spec) == typeid(MandolinSpec)){
+        instrument = new Mandolin(serialNumber, price, (MandolinSpec)spec);
+    }
+    inventory->push_back(instrument);
 }
 
-Guitar* Inventory::getGuitar(string serialNumber){
-    list<Guitar*>::iterator i = guitars->begin();
-    Guitar* guitar = nullptr;
-    while (guitars->end() != i){
-        guitar = *i;
-        if (guitar->getSerialNumber() == serialNumber){
-            return guitar;
+Instrument* Inventory::get(string serialNumber){
+    list<Instrument*>::iterator i = inventory->begin();
+    Instrument* instrument = nullptr;
+    while (inventory->end() != i){
+        instrument = *i;
+        if (instrument->getSerialNumber() == serialNumber){
+            return instrument;
         }
         i++;
     }
@@ -32,15 +38,17 @@ Guitar* Inventory::getGuitar(string serialNumber){
 }
 
 list<Guitar*>* Inventory::search(GuitarSpec searchGuitar){
-    list<Guitar*>::iterator i = guitars->begin();
+    list<Instrument*>::iterator i = inventory->begin();
     list<Guitar*>* matchingGuitars = nullptr;
     Guitar* guitar = nullptr;
 
-    while (guitars->end() != i){
-        guitar = *i;
-        GuitarSpec guitarSpec = guitar->getSpec();
-        if (guitarSpec.matches(searchGuitar)){
-            matchingGuitars->push_back(guitar);
+    while (inventory->end() != i){
+        if (typeid(*i) == typeid(Guitar)){
+            guitar = (Guitar*)(*i);
+            GuitarSpec guitarSpec = guitar->getSpec();
+            if (guitarSpec.matches(searchGuitar)){
+                matchingGuitars->push_back(guitar);
+            }
         }
     }
 

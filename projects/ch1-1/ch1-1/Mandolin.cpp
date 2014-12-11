@@ -1,7 +1,8 @@
 #include "Mandolin.h"
 
 
-Mandolin::Mandolin()
+Mandolin::Mandolin(std::string serialNumber, double price, MandolinSpec spec)
+    : Instrument(serialNumber, price, spec)
 {
 }
 
